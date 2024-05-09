@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if grep -q docker /proc/1/cgroup; then
+    echo "Script running in Docker"
+else
+    echo "Script not running in Docker"
+
+fi
+
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
