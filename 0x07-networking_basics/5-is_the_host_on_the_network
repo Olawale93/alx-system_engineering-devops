@@ -6,13 +6,12 @@
 #Ping the IP 5 times
 
 # Check if an argument is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
+if [ $# -eq 1 ]; then
+    echo "Usage: 5-is_the_host_on_the_network $0 {IP_ADDRESS}"
     exit 1
+elif [$# -gt 1]; then
+	echo "Usage: 5-is_the_host_on_the_network $0 {IP_ADDRESS}"
+	exit
+else
+	ping "#1" -c 5
 fi
-
-# Assign the IP address from the argument
-ip_address=$1
-
-# Ping the IP address 5 times
-ping -c 5 $ip_address
