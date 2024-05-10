@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Get listening ports and their corresponding PIDs
-netstat -p
+netstat -l -p
