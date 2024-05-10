@@ -1,3 +1,3 @@
 #!/bin/bash
 
-netstat -1 -p
+netstat -l -p
