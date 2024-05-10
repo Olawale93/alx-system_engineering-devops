@@ -1,8 +1,2 @@
 #!/bin/bash
-ss -tuln | grep LISTEN | awk '{print $4,$7}' | while read line
-do
-    ip_port=$(echo $line | awk '{print $1}')
-    pid=$(echo $line | awk '{print $2}')
-    program=$(basename $(readlink /proc/$pid/exe))
-    echo "Port $ip_port is being listened by PID $pid ($program)"
-done
+netstat -tuln
